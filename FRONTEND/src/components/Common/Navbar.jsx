@@ -125,7 +125,7 @@ const Navbar = () => {
            onClick={toggleNavDrawer}
            className='block text-gray-600 hover:text-black'
            >
-            Bottom wear
+            Bottom wears
           </Link>
         </nav>
       </div>
