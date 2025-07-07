@@ -8,7 +8,7 @@ import { IoMdClose } from 'react-icons/io'
 const Navbar = () => {
 
 
-  const [drawerOpen, setDrawerOpen ] = useState(true);
+  const [drawerOpen, setDrawerOpen ] = useState(false);
   const [NavDrawerOpen, setNavDrawerOpen] = useState(false)
 
   const toggleNavDrawer = () => {
@@ -60,6 +60,8 @@ const Navbar = () => {
       <HiOutlineUser className="h-6 w-6 text-gray-700"/>
 
       </Link>
+
+      {/*Cart button */}
       <button 
 
       onClick = {toggleCartDrawer}
@@ -67,10 +69,13 @@ const Navbar = () => {
        className='relative hover:text-black'>
 
       <HiOutlineShoppingBag className="h-6 w-6 text-gray-700"/>
+
+      {/*bag ke upar likha hua 4 */}
       <span className='absolute -top-1 bg-rabbit-red text-white text-xs rounded-full px-2 py-0.5'>
          4
       </span>
       </button>
+
       {/*Search*/}
       <div className='overflow-hidden'>
       <SearchBar/>
