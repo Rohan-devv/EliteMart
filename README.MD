@@ -4,10 +4,13 @@ EliteMart is a robust and scalable MERN stack e-commerce platform featuring an i
 
 ## 🔗 Live Demo
 
-👉 [Click Here to Explore EliteMart](https://elitemart.vercel.app) *(replace with actual live link)*  
-👉 [Watch Demo Video](https://youtu.be/your-demo-link) *(replace with actual video)*
+👉 [Click Here to Explore EliteMart](https://elitemart.vercel.app)   
+👉 [Watch Demo Video](https://youtu.be/your-demo-link)
 
 ---
+
+![Home Page](./screenshots/home.png)
+
 
 ## 🚀 Features
 
