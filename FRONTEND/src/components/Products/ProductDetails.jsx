@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-const ProductDetails = () => {
 
-    const selectedProduct = {
+ const selectedProduct = {
   name: "Stylish Jacket",
   price: 120,
   originalPrice: 150,
@@ -23,6 +22,20 @@ const ProductDetails = () => {
   ],
 };
 
+const ProductDetails = () => {
+
+
+  const [mainImage , setMainImage] = useState("");
+
+  useEffect(()=>{
+    if(selectedProduct?.images?.length >0){
+      setMainImage(selectedProduct.images[0].url);
+    }
+
+  },[selectedProduct]);
+
+   
+
   return (
     <div className="p-6">
       <div className="max-w-6xl mx-auto bg-white p-8 rounded-lg">
@@ -34,6 +47,7 @@ const ProductDetails = () => {
     key={index}
     src={image.url}
     alt={image.altText || `Thumbnail ${index}`}
+    onClick={()=>setMainImage(image.url)}
     className="w-20 h-20 object-cover rounded-lg cursor-pointer border"
   />
 ))}
@@ -43,7 +57,7 @@ const ProductDetails = () => {
               <div className="md:w-1/2">
                 <div className="mb-4">
                   <img
-                    src={selectedProduct.images[0]?.url}
+                    src={mainImage}
                     alt="Main Product"
                     className="w-full h-auto object-cover rounded-lg"
                   />
