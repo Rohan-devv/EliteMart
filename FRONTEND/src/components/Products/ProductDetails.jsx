@@ -25,7 +25,12 @@ import React, { useEffect, useState } from 'react'
 const ProductDetails = () => {
 
 
-  const [mainImage , setMainImage] = useState("");
+ const [mainImage, setMainImage] = useState("");
+const [selectedSize, setSelectedSize] = useState("");
+const [selectedColor, setSelectedColor] = useState("");
+const [quantity, setQuantity] = useState(1);
+const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+
 
   useEffect(()=>{
     if(selectedProduct?.images?.length >0){
@@ -33,6 +38,12 @@ const ProductDetails = () => {
     }
 
   },[selectedProduct]);
+
+  const handleQuantityChange = (action) => {
+  if (action === "plus") setQuantity((prev) => prev + 1);
+  if (action === "minus" && quantity > 1) setQuantity((prev) => prev - 1);
+};
+
 
    
 
@@ -71,7 +82,9 @@ const ProductDetails = () => {
                          key={index}
                          src={image.url}
                          alt={image.altText || `Thumbnail ${index}`}
-                         className="w-20 h-20 object-cover rounded-lg cursor-pointer border"
+                          onClick={()=>setMainImage(image.url)}
+    className={`w-20 h-20 object-cover rounded-lg cursor-pointer border 
+      ${mainImage === image.url? "border-black": "border-gray-300"}`}
                        />
                      ))}
                    </div>
@@ -98,7 +111,13 @@ const ProductDetails = () => {
                                {selectedProduct.colors.map((color) => (
                                  <button
                                   key={color} 
-                                  className="w-8 h-8  rounded-full border"
+                                  onClick={()=> setSelectedColor(color)}
+                                  className={`w-8 h-8 rounded-full border ${
+                                            selectedColor === color
+                                              ? "border-4 border-black"
+                                              : "border-gray-300"
+                                          }`}
+
                                   style={{
                                     backgroundColor: color.toLowerCase(),
                                      filter: "brightness(0.5)",
@@ -109,25 +128,40 @@ const ProductDetails = () => {
                              </div>
                            </div>
                            <div className="mb-4">
+
                                <p className="text-gray-700">Size:</p>
                                <div className="flex gap-2 mt-2">
                                  {selectedProduct.sizes.map((size) => (
-                                   <button key={size} className="px-4 py-2 rounded border">
+                                   <button
+                                    key={size} 
+                                    onClick={()=> setSelectedSize(size)}
+                                    className={`px-4 py-2 rounded border ${
+                                          selectedSize === size ? "bg-black text-white" : ""
+                                        }`}
+                                    >
                                      {size}
                                    </button>
                                  ))}
+
                                </div>
                              </div>
+
+
                              <div className="mb-6">
                                   <p className="text-gray-700">Quantity:</p>
                                   <div className="flex items-center space-x-4 mt-2">
-                                    <button className="px-2 py-1 bg-gray-200 rounded text-lg">
+                                    <button
+                                    onClick={()=>handleQuantityChange("minus")}
+                                     className="px-2 py-1 bg-gray-200 rounded text-lg"
+                                     >
                                       –
                                     </button>
 
-                                    <span className="text-lg">1</span>
+                                    <span className="text-lg">{quantity}</span>
 
-                                    <button className="px-2 py-1 bg-gray-200 rounded text-lg">
+                                    <button
+                                    onClick={()=>handleQuantityChange("plus")} 
+                                    className="px-2 py-1 bg-gray-200 rounded text-lg">
                                       +
                                     </button>
                                   </div>
