@@ -8,9 +8,10 @@ EliteMart is a robust and scalable MERN stack e-commerce platform featuring an i
 👉 [Watch Demo Video](https://youtu.be/your-demo-link)
 
 ---
-
+#Home page 
 ![Home Page](./screenshots/Home.png)
-![Best seller](./screenshots/Best%20seller.png) ✅
+#Best seller
+![Best seller](./screenshots/Best%20seller.png) 
 
 
 
