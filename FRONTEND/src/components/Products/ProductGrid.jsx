@@ -13,6 +13,13 @@ const ProductGrid = ({products}) => {
             alt={product.images[0].altText || product.name}
             className="w-full h-full object-cover rounded-lg"
           />
+          <h3 className="text-sm mb-2">{product.name}</h3>
+          <p className="text-gray-500 font-medium text-sm tracking-tighter">
+          ${product.price}
+
+  
+          </p>
+
         </div>
       </div>
     </Link>
