@@ -27,7 +27,8 @@ const FeaturedCollections = () => {
               Shop Now
             </Link>
 
-            <div> Hii </>
+            <div> Hii </div >
+             <div> Hii </div >
 
           
         </div>
