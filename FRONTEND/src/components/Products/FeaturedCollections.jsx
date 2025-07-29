@@ -29,6 +29,8 @@ const FeaturedCollections = () => {
 
             <div> Hii </div >
              <div> Hii </div >
+              <div> Hii </div >
+               <div> Hii </div >
 
           
         </div>
