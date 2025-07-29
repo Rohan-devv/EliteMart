@@ -28,6 +28,7 @@ const FeaturedCollections = () => {
             </Link>
 
              <div> Hii </div >
+              <div> Hii </div >
 
           
         </div>
