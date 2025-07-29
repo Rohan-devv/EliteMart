@@ -27,6 +27,8 @@ const FeaturedCollections = () => {
               Shop Now
             </Link>
 
+            <div> Hii </>
+
           
         </div>
         {/* Right Content */}
